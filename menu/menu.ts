@@ -136,8 +136,27 @@ export function main() {
                 keyPress();
                 break;
 
-            case 5: console.log(colors.fg.whitestrong, '\n\nApagar uma conta\n\n', colors.reset); keyPress(); break
-            case 6: console.log(colors.fg.whitestrong, '\n\nSaque\n\n', colors.reset); keyPress(); break
+            case 5:
+                console.log(colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", colors.reset);
+                console.log("Digite o número da Conta: ");
+                numero = leia.questionInt("");
+                contas.deletar(numero);
+                keyPress();
+                break;
+            case 6: 
+            console.log(colors.fg.whitestrong, '\n\nSaque\n\n', colors.reset)
+            
+            console.log("Digite o número da Conta: ")
+            numero = leia.questionInt("")
+            
+            console.log("\nDigite o valor do Saque (R$): ")
+            valor = leia.questionFloat("")
+
+            contas.sacar(numero,valor)
+
+            keyPress();
+            break
+
             case 7:
                     console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
                     console.log("Digite o número da Conta: ");
